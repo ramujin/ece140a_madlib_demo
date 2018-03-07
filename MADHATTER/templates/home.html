@@ -1,0 +1,27 @@
+<!-- MADHATTER/templates/home.html -->
+
+{% extends "layout.html" %}
+
+    {% block body %}
+        <h2> Current Madlibs </h2>
+        <ul>
+        {% for madlib in madlibs %}
+            <li class='madlib_text'>
+                ({{ madlib.id }}) <span>{{ madlib.bus_name }}</span> is a <span>{{ madlib.bus_type }}</span> organization that serves <span>{{ madlib.market_type }}</span> customers who need <span>{{ madlib.job_be_done }}</span>. We will generate revenue using a <span>{{ madlib.rev_model }}</span> model.
+                <form name='edit_madlib_form' action="/madlib/{{ madlib.id }}" method="GET">
+                    <button class='edit_btn'>Edit</button>
+                </form>
+                <form name='delete_madlib_form' action="/madlib/{{ madlib.id }}" method="POST">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button class='delete_btn'>Delete</button>
+                </form>
+            </li>
+        {% else %}
+            <li class='madlib_text'> Oh where... oh where have my Madlibs gone? Oh where... oh where can they be? </li>
+        {% endfor %}
+        </ul>
+
+        <form name='new_madlib_form' action="/madlib" method="GET">
+            <button class='submit_btn'>Add a Madlib</button>
+        </form>
+    {% endblock %}

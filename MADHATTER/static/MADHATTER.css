@@ -1,0 +1,52 @@
+/* MADHATTER/static/MADHATTER.css */
+
+* {
+	font-family: "Open Sans";
+}
+
+form {
+	display: inline-block;
+	font-size: 18px;
+}
+form input {
+	font-size: 16px;
+}
+
+.main {
+	margin: 10px;
+}
+
+.submit_btn {
+	font-size: 22px;
+	color: gray;
+	cursor: pointer;
+	margin: 20px;
+}
+
+.edit_btn {
+	font-size: 18px;
+	color: white;
+	background-color: #5b9;
+	cursor: pointer;
+	margin: 5px;
+}
+
+.delete_btn {
+	font-size: 18px;
+	color: white;
+	background-color: #e66;
+	cursor: pointer;
+	margin: 5px;
+}
+
+.error {
+	color: #f55;
+	margin: 10px 0;
+}
+
+li.madlib_text span {
+	color: #3af;
+	font-weight: 600;
+	font-size: 18px;
+	text-decoration: underline;
+}

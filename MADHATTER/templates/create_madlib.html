@@ -1,0 +1,22 @@
+<!-- MADHATTER/templates/create_madlib.html -->
+
+{% extends "layout.html" %}
+
+    {% block body %}
+        <h2> Create a Madlib </h2>
+
+        {% if error_msg is defined %}
+            <div class="error"> ERROR : {{ error_msg }} </div>
+        {% endif %}
+
+        <form action="/madlib" method="POST">
+            <input type="hidden" name="_method" value="POST">
+            <input type="text" size=30 name="bus_name"> is a(n)
+            <input type="text" size=30 name="bus_type"> organization that serves
+            <input type="text" size=30 name="market_type"> customers who need
+            <input type="text" size=30 name="job_be_done">. We will generate revenue using a
+            <input type="text" size=30 name="rev_model"> model.
+
+            <button class='edit_btn'>Save Madlib</button>
+        </form>
+    {% endblock %}
