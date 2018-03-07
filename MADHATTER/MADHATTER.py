@@ -69,11 +69,11 @@ def home_route() :
     return render_template('home.html', madlibs=cur.fetchall())
 
 # THIS IS 5 ROUTES IN ONE (BUT HTML FORMS ONLY ALLOW GET/POST)
-# /GET madlib (create form)
-# /POST madlib (create)
-# /GET madlib ID (edit form)
-# /PUT madlib ID (update)
-# /DELETE madlib ID (delete)
+# GET /madlib (create form)
+# POST /madlib (create)
+# GET /madlib/ID (edit form)
+# PUT /madlib/ID (update)
+# DELETE /madlib/ID (delete)
 @app.route('/madlib', methods=['GET','POST'])
 @app.route('/madlib/<an_id>', methods=['GET','POST'])
 def madlib_route(an_id=None) :
